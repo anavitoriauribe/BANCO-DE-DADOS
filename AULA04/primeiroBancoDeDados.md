@@ -9,7 +9,6 @@ Cidades{
     int id PK "Gerado automaticamente"
     varchar cidade "Armazena o nome da cidade"
     varchar país "Armazena o país em que a cidade se localiza"
-    int PIB "Armazena o Produto Interno Bruto em US$"
     int população "Armazena o número de habitantes"
 }
 ```
@@ -27,12 +26,44 @@ CREATE TABLE cidades (
 ```
 `"F5"` pra executar.
 
+--- 
+
 >Comando de verificação:
 ```sql
 SELECT * FROM cidades;
 ```
+
+--- 
+
 >Comando para inserir cidades na tabela:
 ```sql
  INSERT INTO cidades (cidade, país, população)
- VALUES('','','');
+ VALUES 
+    ('Nova York', 'Estados Unidos', 8336817),
+    ('Tóquio', 'Japão', 13960000),
+    ('Los Angeles', 'Estados Unidos', 3822238),
+    ('Londres', 'Reino Unido', 8982000),
+    ('Paris', 'França', 2161000),
+    ('Pequim', 'China', 21893095),
+    ('Xangai', 'China', 24870895),
+    ('Chicago', 'Estados Unidos', 2665039),
+    ('Cingapura', 'Cingapura', 5637000),
+    ('Shenzhen', 'China', 12590000);
  ```
+ 
+--- 
+
+>Consulta simples para listar todas as cidades cadastradas:
+
+```sql
+SELECT * FROM cidades;
+```
+
+--- 
+
+>Consulta ordenada mostrando as cidades por ordem de população (da maior para a menor):
+
+```sql
+SELECT id, cidade, país, população FROM cidades
+ORDER BY população DESC;
+```
