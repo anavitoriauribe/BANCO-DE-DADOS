@@ -14,9 +14,9 @@ Cidades{
 }
 ```
 ---
-Para criação do banco de dados, utilizamos os seguintes comandos: 
+Para criação da tabela, utilizamos os seguintes comandos: 
 
->Cria o banco de dados coms uas respectivas colunas:
+>Cria a tabela com as respectivas colunas:
 ```sql
 CREATE TABLE cidades (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY NOT NULL,

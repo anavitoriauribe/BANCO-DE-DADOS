@@ -410,32 +410,65 @@ SELECT nome,autor,preco FROM livros;
 ![alt text](image-8.png)
 
 ### 3. Liste os gêneros distintos existentes na base, em ordem alfabética.
+
 ```sql 
 SELECT DISTINCT genero FROM livros ORDER BY genero;
 ```
 ![alt text](image-9.png)
 
 ### 4. Descubra quantos autores diferentes existem.
+
 ```sql 
 SELECT DISTINCT autor FROM livros;
 ```
 ![alt text](image-10.png)
 
 ### 5. Liste os 5 livros mais caros da base (título e preço).
+
 ```sql 
 SELECT nome,preco FROM livros ORDER BY preco DESC LIMIT 5;
 ```
 ![alt text](image-11.png)
 
 ### 6. Liste os 5 livros com menor estoque (título e estoque).
+
 ```sql 
 SELECT nome,estoque FROM livros ORDER BY estoque LIMIT 5;
 ```
 ![alt text](image-12.png)
 
 ### 7. Mostre titulo e estoque de todos os livros do gênero Técnico.
+
 ```sql
 SELECT nome,estoque
 FROM produtos
 WHERE categoria='Técnico';
+```
+### 8. Mostre titulo e preco dos livros que custam mais de R$ 200,00.
+
+```sql
+SELECT nome AS nome, preco FROM livros WHERE preco > 200.00;
+```
+### 9. Mostre titulo e preco dos livros com preço entre R$ 40,00 e R$ 70,00.
+
+```sql
+SELECT nome AS nome, preco FROM livros WHERE preco BETWEEN 40.00 AND 70.00;
+```
+
+### 10. Mostre os livros com estoque abaixo de 5 unidades (situação de reposição urgente).
+
+```sql
+FROM livros WHERE estoque < 5;
+```
+
+### 11. Liste os livros publicados antes de 1900, ordenados do mais antigo para o mais recente.
+
+```sql
+SELECT * FROM livros WHERE ano_publicacao < 1900 ORDER BY ano_publicacao ASC;
+```
+
+### 12. Liste os livros publicados entre 2010 e 2020, mostrando título, ano e gênero. 
+
+```sql
+SELECT titulo AS titulo, ano_publicacao, genero FROM livros WHERE ano_publicacao BETWEEN 2010 AND 2020;
 ```
